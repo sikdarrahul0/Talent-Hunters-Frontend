@@ -1,0 +1,13 @@
+.headingStyle {
+  background-color: darkslategrey;
+  font-size: xx-large;
+  font-style: revert;
+  font-family: initial;
+}
+.textStyle {
+  color: midnightblue;
+  font-family: sans-serif;
+}
+.Style {
+  background-color: beige;
+}

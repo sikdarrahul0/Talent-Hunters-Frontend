@@ -1,0 +1,19 @@
+.unit-select {
+  width: 300px;
+  height: 400px;
+}
+.link-design {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  width: 70px;
+  height: 40px;
+}
+.link-design:hover {
+  text-decoration: none;
+}
+.btn-div {
+  width: 60px;
+  height: 50px;
+  margin: 5px auto;
+}

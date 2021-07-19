@@ -1,0 +1,13 @@
+.navbar-design {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
+.logo {
+  margin-left: 50px;
+  height: 80px;
+  width: 170px;
+}
+.nav-link {
+  font-weight: bold;
+  margin: 10px 10px;
+}
