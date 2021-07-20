@@ -28,7 +28,7 @@ const Login = () => {
                 history.replace(from);
             }
             else{
-                from.pathname = '/home'
+                // from.pathname = '/home'
                 history.replace(from);
             }
         }
@@ -60,18 +60,6 @@ const Login = () => {
                 setError('');
             } else {
                 setError('Please fill up email field correctly.');
-            }
-        }
-        if (e.target.name === 'password') {
-            const isPassValid = e.target.value.length > 5;
-            const passHasNumber = /\d{1}/.test(e.target.value);
-            isValid = isPassValid && passHasNumber;
-            if (isValid) {
-                setError('');
-            } else {
-                setError(
-                    'Password strength poor. Please fill up with minimum 5 alphabates with minimun one number'
-                );
             }
         }
         // eslint-disable-next-line no-constant-condition

@@ -1,13 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { UserContext } from '../../App';
+/* eslint-disable react/jsx-no-undef */
+import React, { useEffect, useState } from 'react';
 import './AdminPanel.css';
-import UnitAdminPanel from './UnitAdminPanel';
+import UnitJobPost from './UnitJobPost';
 
 const AdminPanel = () => {
-
-    // eslint-disable-next-line no-unused-vars
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [post, setPost] = useState([]);
     useEffect(()=>{
         fetch('http://localhost:7000/jobPost/allJobPost')
@@ -25,15 +21,16 @@ const AdminPanel = () => {
     }
 
     return (
-        <div className="container">
-       <button className="float-right btn btn-danger" onClick={()=> setLoggedInUser({})}><Link to="/">Log out </Link> </button>
-        <h2 className="text-white headingStyle">Admin Home Page</h2>
-            <div className="row">
-            {
-                post.map(single => <UnitAdminPanel handleStatusUpdate={handleStatusUpdate} single={single}></UnitAdminPanel>)
-            }
-         </div>
-         </div>
+        <section className="container">
+            <div className="admin-page">
+                <h2 className="text-center mb-3">Admin Home Page</h2>
+                <div className="row">
+                    {
+                        post.map(single => <UnitJobPost handleStatusUpdate={handleStatusUpdate} single={single}></UnitJobPost>)
+                    }
+                </div>
+            </div>
+        </section>
     );
         };
 

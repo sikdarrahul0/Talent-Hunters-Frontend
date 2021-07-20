@@ -1,13 +1,12 @@
-.headingStyle {
-  background-color: darkslategrey;
-  font-size: xx-large;
-  font-style: revert;
-  font-family: initial;
+.admin-page {
+  margin-top: 150px;
+  margin-bottom: 50px;
 }
-.textStyle {
-  color: midnightblue;
-  font-family: sans-serif;
-}
-.Style {
-  background-color: beige;
+.single-job-post {
+  width: 90%;
+  margin: 20px 10px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  background-color: rgb(92, 226, 208);
+  padding: 10px 15px;
 }

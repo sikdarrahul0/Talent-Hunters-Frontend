@@ -1,0 +1,25 @@
+.job-description {
+  padding: 20px;
+  width: 100%;
+  border: 2px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  margin: 150px 0 30px 0;
+  border-image-source: linear-gradient(to left, #74ebd5, #acb6e5);
+}
+.job-description:hover {
+  background: rgb(239, 248, 250);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.5);
+  border-image-source: linear-gradient(to left, #acb6e5, #74ebd5);
+}
+.job-description p,
+pre {
+  margin-left: 20px;
+  margin-top: 0;
+  color: rgba(0, 0, 0, 0.678);
+}
+pre {
+  display: flex;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

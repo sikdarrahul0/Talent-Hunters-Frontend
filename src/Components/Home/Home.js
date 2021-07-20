@@ -44,14 +44,9 @@ const Home = () => {
                         <h5 className="text-danger mt-3">No job available at this moment</h5>
                     </div>
                 :
-                <img class="d-block mx-auto my-5" src={loading} alt="loading" />
+                <img className="d-block mx-auto my-5" src={loading} alt="loading" />
                 }
                 
-                
-
-                {
-                   
-                }
         </div>
         </div>
         </div>

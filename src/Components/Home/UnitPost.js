@@ -6,18 +6,18 @@ import './Home.css';
 
 const UnitPost = (props) => {
 
-    const {_id, title, companyName} = props.pt;
+    const {_id, title, location, education, experience, salary, companyName} = props.pt;
     
     return (
         <div class="col-12 job-post">
             <h4>{title}</h4>
             <h6>{companyName}</h6>
-            <p><FontAwesomeIcon className="fa-icon mr-2" icon={faMapMarker} />  Gulshan, Dhaka</p>
-            <p><FontAwesomeIcon className="fa-icon" icon={faGraduationCap} />Bachelor of Science (BSc) in Computer Science Engineering</p>
-            <p><FontAwesomeIcon className="fa-icon" icon={faBriefcase} /> Freshers/1 years experience</p>
-            <p><FontAwesomeIcon className="fa-icon" icon={faHandHoldingUsd} />40000bdt</p>
+            <p><FontAwesomeIcon className="fa-icon mr-2" icon={faMapMarker} />  {location}</p>
+            <p><FontAwesomeIcon className="fa-icon" icon={faGraduationCap} />{education}</p>
+            <p><FontAwesomeIcon className="fa-icon" icon={faBriefcase} /> {experience}</p>
+            <p><FontAwesomeIcon className="fa-icon" icon={faHandHoldingUsd} />{salary}</p>
             <p className="deadline"><FontAwesomeIcon className="fa-icon" icon={faCalendar} /> Deadline: 14 August 2021</p>
-           <NavLink to={`/apply/${_id}`}> <button  className="apply-btn">Apply</button></NavLink>            
+           <NavLink to={`/applyPage/${_id}`}> <button  className="more-detail-btn">More Details</button></NavLink>            
        </div>
         
     );

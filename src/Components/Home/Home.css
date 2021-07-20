@@ -25,14 +25,15 @@
   color: rgb(70, 8, 70);
   margin: 0 5px;
 }
-.apply-btn {
-  width: 120px;
+.more-detail-btn {
+  width: 170px;
   height: 39px;
+  border: none;
   border-radius: 5px;
   background-color: rgb(70, 8, 70);
   color: #fff;
 }
-.apply-btn:hover {
+.more-detail-btn:hover {
   cursor: pointer;
   background-color: rgb(39, 4, 39);
   color: #fff;

@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
 import EmployerJobPost from '../EmployerJobPost/EmployerJobPost';
+import './PostUploader.css';
 
 const PostUploader = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -24,15 +24,14 @@ const PostUploader = () => {
         .then((res) => res.json())
         .then((result) => {
           setMessage(result.message);
-          alert('Successfully posted');
         });
     };
   
     return (  
-      <>
-        <div className=" margin col-md-8 p-4 pr-5">
-        <button className="float-right btn btn-danger" onClick={()=> setLoggedInUser({})}><Link to="/">Log out </Link></button>
-          <h4 className="add-title"> Add Job Post </h4>
+      <section className="container">
+        <div className="job-post-form col-md-8 p-4 p-5">
+          
+          <h4 className="add-title text-center"> Add New Job Post </h4>
   
           <form className="pt-5" onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-3">
@@ -72,51 +71,133 @@ const PostUploader = () => {
               <input
                 name="title"
                 className="form-control"
-                placeholder="title"
+                placeholder="Job title"
                 ref={register({ required: true })}
               />
               {errors.name && (
                 <span className="text-danger">Title is required</span>
               )}
             </div>
-  
             <div className="mb-3">
               <input
-                name="category"
+                name="vacancy"
                 className="form-control"
-                placeholder="Job Category"
+                placeholder="Vacancy"
                 ref={register({ required: true })}
               />
               {errors.name && (
+                <span className="text-danger">Vacancy is required</span>
+              )}
+            </div>
+            <div className="mb-3">
+              <textarea
+                name="responsibilities"
+                className="form-control"
+                placeholder="Responsibilities for this job"
+                ref={register({ required: true })}
+              />
+              {errors.name && (
+                <span className="text-danger">Responsibilities is required</span>
+              )}
+            </div>
+            <div className="mb-3">
+              <textarea
+                name="requirements"
+                className="form-control"
+                placeholder="Requirements for this job"
+                ref={register({ required: true })}
+              />
+              {errors.name && (
+                <span className="text-danger">Requirements is required</span>
+              )}
+            </div>
+            <div className="mb-3">
+              <input
+                name="experience"
+                className="form-control"
+                placeholder="experience"
+                ref={register({ required: true })}
+              />
+                {errors.name && (
+                <span className="text-danger">Experience is required</span>
+              )}
+            </div>
+            <div className="mb-3">
+              <input
+                name="location"
+                className="form-control"
+                placeholder="Job Location"
+                ref={register({ required: true })}
+              />
+              {errors.name && (
+                <span className="text-danger">Job location is required</span>
+              )}
+            </div>
+            <div className="mb-3">
+              <input
+                name="salary"
+                className="form-control"
+                placeholder="Salary"
+                ref={register({ required: true })}
+              />
+              {errors.name && (
+                <span className="text-danger">Salary is required</span>
+              )}
+            </div>
+            <div className="mb-3">
+              <input
+                name="education"
+                className="form-control"
+                placeholder="Educational Requirements"
+                ref={register({ required: true })}
+              />
+              {errors.name && (
+                <span className="text-danger">Educational requirements are required</span>
+              )}
+            </div>
+            <div className="mb-3">
+            <select className="form-control" name="category" ref={register({ required: true })} >
+                <option value="IT">IT</option>
+                <option value="BANKING">BANKING</option>
+                <option value="AGRO">AGRO</option>
+                <option value="NGO">NGO</option>
+                <option value="ARCHITECTS">ARCHITECTS</option>
+                <option value="DATA ENTRY">DATA ENTRY</option>
+                <option value="GARMENTS">GARMENTS</option>
+                <option value="MEDICAL/PHARMA">MEDICAL/PHARMA</option>
+                <option value="DESIGNER">DESIGNER</option>
+                <option value="OTHERS">OTHERS</option>
+           </select>
+           {errors.name && (
                 <span className="text-danger">Category is required</span>
               )}
             </div>
             <div className="mb-3">
-              <input
-                name="description"
+              <textarea
+                name="otherBenefits"
                 className="form-control"
-                placeholder="Description"
+                placeholder="Compensation & Other Benefits                "
                 ref={register({ required: true })}
               />
               {errors.name && (
-                <span className="text-danger">Desciption is required</span>
+                <span className="text-danger">Compensation & Other Benefits are required</span>
               )}
             </div>
             <div className="mb-3">
               <input
-                name="status"
-                value ="pending"
+                name="deadline"
                 className="form-control"
+                placeholder="Deadline. Example: 14 August 2021"
                 ref={register({ required: true })}
               />
               {errors.name && (
-                <span className="text-danger">Status is required</span>
+                <span className="text-danger">Deadline is required</span>
               )}
             </div>
             <input
               className="btn btn-success d-block w-100"
               type="submit"
-              value="Post"
+              value="Submit Job Post"
             />
              <span className="text-danger">{message}</span>
 
@@ -133,7 +214,8 @@ const PostUploader = () => {
             }
                 
           </div>
-      </>
+          
+        </section>
     );
 };
 
