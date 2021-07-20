@@ -13,6 +13,7 @@ const AccountCreate = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if(user.password === user.confirmPassword){
+            delete user.confirmPassword;
             fetch(`http://localhost:7000/user/signup`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

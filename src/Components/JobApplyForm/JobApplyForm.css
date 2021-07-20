@@ -1,0 +1,20 @@
+.job-apply-form {
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+.job-apply-form input,
+textarea,
+select {
+  margin-bottom: 15px;
+}
+.job-apply-form input[type="file"] {
+  border: 1px solid rgb(212, 201, 201);
+  height: 43px;
+  padding: 4px;
+  background-color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.job-apply-form label {
+  margin: 0;
+}

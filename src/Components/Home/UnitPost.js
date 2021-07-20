@@ -6,7 +6,7 @@ import './Home.css';
 
 const UnitPost = (props) => {
 
-    const {_id, title, location, education, experience, salary, companyName} = props.pt;
+    const {_id, title, location, education, experience, salary, companyName, deadline} = props.pt;
     
     return (
         <div class="col-12 job-post">
@@ -16,7 +16,7 @@ const UnitPost = (props) => {
             <p><FontAwesomeIcon className="fa-icon" icon={faGraduationCap} />{education}</p>
             <p><FontAwesomeIcon className="fa-icon" icon={faBriefcase} /> {experience}</p>
             <p><FontAwesomeIcon className="fa-icon" icon={faHandHoldingUsd} />{salary}</p>
-            <p className="deadline"><FontAwesomeIcon className="fa-icon" icon={faCalendar} /> Deadline: 14 August 2021</p>
+            <p className="deadline"><FontAwesomeIcon className="fa-icon" icon={faCalendar} /> Deadline: {deadline}</p>
            <NavLink to={`/applyPage/${_id}`}> <button  className="more-detail-btn">More Details</button></NavLink>            
        </div>
         

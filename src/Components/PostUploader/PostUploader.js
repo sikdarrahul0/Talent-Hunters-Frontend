@@ -5,6 +5,7 @@ import EmployerJobPost from '../EmployerJobPost/EmployerJobPost';
 import './PostUploader.css';
 
 const PostUploader = () => {
+  // eslint-disable-next-line no-unused-vars
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [message, setMessage] = useState('');
   const [jobPost, setJobPost] = useState([]);
@@ -13,7 +14,7 @@ const PostUploader = () => {
     fetch(`http://localhost:7000/jobPost/employerJobPost/${loggedInUser.username}`)
     .then(res => res.json())
     .then(res => setJobPost(res))
-  },[])
+  },[loggedInUser.username])
   
     const onSubmit = data => {
       fetch(`http://localhost:7000/jobPost/addPost`, {
@@ -87,6 +88,17 @@ const PostUploader = () => {
               />
               {errors.name && (
                 <span className="text-danger">Vacancy is required</span>
+              )}
+            </div>
+            <div className="mb-3">
+              <input
+                name="jobType"
+                className="form-control"
+                placeholder="Job Type. Example: Full-Time/ Part-Time"
+                ref={register({ required: true })}
+              />
+              {errors.name && (
+                <span className="text-danger">Job Type is required</span>
               )}
             </div>
             <div className="mb-3">
@@ -210,11 +222,9 @@ const PostUploader = () => {
               
               jobPost.map(post => <EmployerJobPost post={post}></EmployerJobPost>)
               :
-              <h4>You have no job post. Please post first</h4>
+              <h4 className="mt-4 text-danger text-center">You have no job post. Please post first</h4>
             }
-                
           </div>
-          
         </section>
     );
 };

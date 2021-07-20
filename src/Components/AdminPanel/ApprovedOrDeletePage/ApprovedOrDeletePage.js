@@ -12,11 +12,28 @@ const ApprovedOrDeletePage = () => {
     fetch(`http://localhost:7000/jobPost/singleJobPost/${id}`)
     .then(res => res.json())
     .then(data => {
-          console.log(data);
             setIsHitApi(true);
             setJob(data[0]);
         })
   },[id])
+
+  const handleDeletePost = (id) => {
+        fetch(`http://localhost:7000/jobPost/deleteJob/${id}`,{
+          method: 'DELETE',
+          headers: {'Content-Type': 'application/json'}
+      })
+      .then(res => res.json())
+      .then(res => alert(res.message))
+  }
+
+  const handleStatusUpdate = (id) =>{
+        fetch(`http://localhost:7000/jobPost/approvePost/${id}`,{
+            method: 'PUT',
+            headers: {'Content-Type': 'application/json'}
+        })
+        .then(res => res.json())
+        .then(res => alert(res.message))
+      }
     return (
         <section className="mb-5">
         {
@@ -29,11 +46,11 @@ const ApprovedOrDeletePage = () => {
           <div className="mx-auto w-50 overflow-hidden">
           {
               job.status === 'pending' ?
-              <button  className="approve-btn">Approve</button>
+              <button onClick={()=> handleStatusUpdate(job._id)}  className="approve-btn">Approve</button>
               :
               <></>
           }
-          <button className="delete-btn">Delete</button>
+          <button onClick={() => handleDeletePost(job._id)} className="delete-btn">Delete</button>
           </div>
         </section>
     );

@@ -26,8 +26,16 @@ const Home = () => {
             <div className="row">
             <div className="col-12 category-div">
                 <select className="float-right" id="category" onChange={(e)=>setCategory(e.target.value)} required>
-                        <option value="IT">IT</option>
-                        <option value="Marketing">Marketing</option>
+                <option value="IT">IT</option>
+                <option value="BANKING">BANKING</option>
+                <option value="AGRO">AGRO</option>
+                <option value="NGO">NGO</option>
+                <option value="ARCHITECTS">ARCHITECTS</option>
+                <option value="DATA ENTRY">DATA ENTRY</option>
+                <option value="GARMENTS">GARMENTS</option>
+                <option value="MEDICAL/PHARMA">MEDICAL/PHARMA</option>
+                <option value="DESIGNER">DESIGNER</option>
+                <option value="OTHERS">OTHERS</option>
                 </select>
                 <p>Select job category: <FontAwesomeIcon icon={faSearch} />  </p>
             </div>
