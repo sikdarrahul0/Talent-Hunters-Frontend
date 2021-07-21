@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import image from '../../brand-img.png';
+import image from '../../image&gif/brand-img.png';
 import './AccountCreate.css';
 
 const AccountCreate = () => {

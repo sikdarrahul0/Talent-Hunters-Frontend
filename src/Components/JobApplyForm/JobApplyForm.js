@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 import React from 'react';
-// import { useForm } from "react-hook-form";
 import { useParams } from 'react-router-dom';
 import './JobApplyForm.css';
 

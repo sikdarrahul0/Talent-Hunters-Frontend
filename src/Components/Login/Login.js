@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import { UserContext } from '../../App';
-import image from '../../brand-img.png';
+import image from '../../image&gif/brand-img.png';
 import './Login.css';
 
 const Login = () => {

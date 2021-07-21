@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-import loading from '../../loading.gif';
+import loading from '../../image&gif/loading.gif';
 import SingleJobDetails from '../SingleJobDetails/SingleJobDetails';
 import './ApplyPage.css';
 

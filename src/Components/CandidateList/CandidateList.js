@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import loading from '../../loading.gif';
-import sadEmoji from '../../sad-emoji.png';
+import loading from '../../image&gif/loading.gif';
+import sadEmoji from '../../image&gif/sad-emoji.png';
 import SingleCandidateList from '../SingleCandidateList/SingleCandidateList';
 
 const CandidateList = () => {

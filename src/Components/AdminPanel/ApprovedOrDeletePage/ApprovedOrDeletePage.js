@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import loading from '../../../loading.gif';
+import loading from '../../../image&gif/loading.gif';
 import SingleJobDetails from '../../SingleJobDetails/SingleJobDetails';
 import './ApprovedOrDeletePage.css';
 

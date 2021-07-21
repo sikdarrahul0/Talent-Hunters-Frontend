@@ -1,8 +1,8 @@
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
-import loading from '../../loading.gif';
-import sadEmoji from '../../sad-emoji.png';
+import loading from '../../image&gif/loading.gif';
+import sadEmoji from '../../image&gif/sad-emoji.png';
 import './Home.css';
 import UnitPost from './UnitPost';
 

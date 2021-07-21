@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { UserContext } from '../../App';
-import logo from './default-monochrome.svg';
+import logo from '../../image&gif/default-monochrome.svg';
 import './NavBar.css';
 
 const NavBar = () => {
