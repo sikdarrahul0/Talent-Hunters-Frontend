@@ -12,7 +12,6 @@ const UnitJobPost = (props) => {
                 <h6>{companyName}</h6>
                 <NavLink to={`/approvedOrDeletePage/${_id}`}> <button  className="more-detail-btn">More Details</button></NavLink>
             </div>
-
         </div>
     );
 };

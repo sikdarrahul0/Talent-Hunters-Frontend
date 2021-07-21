@@ -216,7 +216,8 @@ const PostUploader = () => {
           </form>
           </div>
           <div>
-            <h3 className="mt-5 text-center">My Previous Job post</h3>
+            <h3 className="my-5 text-center">My Previous Job post</h3>
+            <div className="row">
             {
               jobPost.length ?
               
@@ -224,6 +225,7 @@ const PostUploader = () => {
               :
               <h4 className="mt-4 text-danger text-center">You have no job post. Please post first</h4>
             }
+            </div>
           </div>
         </section>
     );

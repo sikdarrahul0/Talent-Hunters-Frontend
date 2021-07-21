@@ -1,18 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import './EmployerJobPost.css';
 
 const EmployerJobPost = (props) => {
     const {_id, companyName, title, category} = props.post;
 
     return (
-        <div className="card col-lg-2 col-md-4 col-sm-6 m-3 Style">
-           <div className="card-body">
-           <h5 className="card-title textStyle">{companyName}</h5>
-           <p className="card-text">{title}</p>
-           <p className="card-title text-primary">Category: {category}</p>
-           <Link to={`/candidateList/${_id}`} className="btn btn-success">See who applies</Link>
+        <div className="col-lg-4 col-md-5 col-sm-12">
+            <div className="employer-job-post">
+                <h4>{title}</h4>
+                <h6>{companyName}</h6>
+                <p>Category: {category}</p>
+                <NavLink style={{ textDecoration: 'none' }}  to={`/candidateList/${_id}`} className="btn btn-success">See who applied</NavLink>
+            </div>
+
         </div>
-        </div>
+       
+          
+        
+           
     );
 };
 

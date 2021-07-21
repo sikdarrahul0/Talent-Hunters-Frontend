@@ -48,7 +48,7 @@ const Home = () => {
                     :
                     <div className="text-center w-75 mx-auto my-5">
                         <h4 className="inline-block text-secondary">Sorry</h4>
-                        <img class="w-25 h-50" src={sadEmoji} alt="sad-emoji" />
+                        <img className="w-25 h-50" src={sadEmoji} alt="sad-emoji" />
                         <h5 className="text-danger mt-3">No job available at this moment</h5>
                     </div>
                 :

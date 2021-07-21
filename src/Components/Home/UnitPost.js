@@ -7,6 +7,7 @@ import './Home.css';
 const UnitPost = (props) => {
 
     const {_id, title, location, education, experience, salary, companyName, deadline} = props.pt;
+ 
     
     return (
         <div class="col-12 job-post">

@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { createContext, useState } from 'react';
 import {
   BrowserRouter as Router, Route, Switch

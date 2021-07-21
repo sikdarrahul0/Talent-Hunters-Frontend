@@ -1,10 +1,20 @@
-ol {
-  background: #ff9999;
-  padding: 20px;
+.accordion-design {
+  background-color: #fffce8;
 }
-
-ol li {
-  background: #ffe5e5;
-  padding: 5px;
-  margin-left: 35px;
+.accordion-design span {
+  color: rgb(90, 88, 88);
+  font-weight: normal;
+}
+.accordion-design p {
+  font-weight: bold;
+}
+.accordion-design a {
+  color: rgb(90, 88, 88);
+}
+.pdf-icon {
+  font-size: 30px;
+}
+.pdf-icon:hover {
+  color: rgb(199, 26, 26);
+  cursor: pointer;
 }
