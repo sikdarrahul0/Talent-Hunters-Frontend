@@ -11,10 +11,9 @@ const ApplyPage = () => {
   const [job, setJob] = useState({});
   const {id} = useParams();
   useEffect(()=>{
-    fetch(`http://localhost:7000/jobPost/singleJobPost/${id}`)
+    fetch(`http://localhost:8000/job/single/${id}`)
     .then(res => res.json())
     .then(data => {
-          console.log(data);
             setIsHitApi(true);
             setJob(data[0]);
         })

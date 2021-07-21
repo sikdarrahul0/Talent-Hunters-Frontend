@@ -50,7 +50,7 @@ const Footer = () => {
                     <FontAwesomeIcon className="icon" icon={faLinkedinIn} />
                     <FontAwesomeIcon className="icon" icon={faYoutube} />
                     </div>
-                    <h6 className="mx-auto my-3"> <FontAwesomeIcon icon={faCopyright} /> {`Rahul Sikdar Pranto ${new Date().getFullYear()}`}</h6>
+                    <h6 className="mx-auto my-3"> <FontAwesomeIcon icon={faCopyright} /> {`${new Date().getFullYear()} Rahul Sikdar Pranto`}</h6>
                 </div>
             </div>
         </section>

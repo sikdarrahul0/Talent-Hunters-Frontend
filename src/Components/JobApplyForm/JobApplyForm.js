@@ -11,7 +11,7 @@ const JobApplyForm = () => {
         <iframe className="d-none" id="hidden-iframe"> </iframe>
       <form
         method="post"
-        action="http://localhost:7000/apply"
+        action="http://localhost:8000/apply/"
         enctype="multipart/form-data"
         target="hidden-iframe" 
       >
@@ -26,7 +26,7 @@ const JobApplyForm = () => {
         <input className="form-control" type="text" id="number" name="mobileNo" required/>
 
         <label htmlFor="address">Address<span className="text-danger">*</span></label>
-        <textarea name="address" className="form-control" id="address" required />
+        <textarea name="address" className="form-control" id="address" required/>
         
         <label>How Did You Get To Know The Company?<span className="text-danger">*</span></label>
         <select className="form-control" name="source" required>

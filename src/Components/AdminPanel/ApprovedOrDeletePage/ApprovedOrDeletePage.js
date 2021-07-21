@@ -9,7 +9,7 @@ const ApprovedOrDeletePage = () => {
   const [job, setJob] = useState({});
   const {id} = useParams();
   useEffect(()=>{
-    fetch(`http://localhost:7000/jobPost/singleJobPost/${id}`)
+    fetch(`http://localhost:8000/job/single/${id}`)
     .then(res => res.json())
     .then(data => {
             setIsHitApi(true);
@@ -18,7 +18,7 @@ const ApprovedOrDeletePage = () => {
   },[id])
 
   const handleDeletePost = (id) => {
-        fetch(`http://localhost:7000/jobPost/deleteJob/${id}`,{
+        fetch(`http://localhost:8000/job/delete/${id}`,{
           method: 'DELETE',
           headers: {'Content-Type': 'application/json'}
       })
@@ -27,7 +27,7 @@ const ApprovedOrDeletePage = () => {
   }
 
   const handleStatusUpdate = (id) =>{
-        fetch(`http://localhost:7000/jobPost/approvePost/${id}`,{
+        fetch(`http://localhost:8000/job/approve/${id}`,{
             method: 'PUT',
             headers: {'Content-Type': 'application/json'}
         })

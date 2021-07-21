@@ -11,13 +11,13 @@ const PostUploader = () => {
   const [jobPost, setJobPost] = useState([]);
   const { register, handleSubmit, errors } = useForm();
   useEffect(()=>{
-    fetch(`http://localhost:7000/jobPost/employerJobPost/${loggedInUser.username}`)
+    fetch(`http://localhost:8000/job/employer/${loggedInUser.username}`)
     .then(res => res.json())
     .then(res => setJobPost(res))
   },[loggedInUser.username])
   
     const onSubmit = data => {
-      fetch(`http://localhost:7000/jobPost/addPost`, {
+      fetch(`http://localhost:8000/job/add`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),

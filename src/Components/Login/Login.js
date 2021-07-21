@@ -28,7 +28,6 @@ const Login = () => {
                 history.replace(from);
             }
             else{
-                // from.pathname = '/home'
                 history.replace(from);
             }
         }
@@ -36,7 +35,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:7000/user/login`, {
+        fetch(`http://localhost:8000/user/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(user),

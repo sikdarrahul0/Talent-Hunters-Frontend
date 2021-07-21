@@ -10,7 +10,7 @@ const CandidateList = () => {
     const [candidateList, setCandidateList] = useState([]);
 
     useEffect(()=>{
-        fetch(`http://localhost:7000/apply/candidateList/${id}`)
+        fetch(`http://localhost:8000/apply/candidate/${id}`)
         .then(res => res.json())
         .then(res => {
             setIsHitApi(true);

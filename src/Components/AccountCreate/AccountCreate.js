@@ -14,7 +14,7 @@ const AccountCreate = () => {
         e.preventDefault();
         if(user.password === user.confirmPassword){
             delete user.confirmPassword;
-            fetch(`http://localhost:7000/user/signup`, {
+            fetch(`http://localhost:8000/user/signup`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(user),
@@ -93,41 +93,6 @@ const AccountCreate = () => {
                     </div>
                 </div>
         </section>
-        {/* <div>
-            <button className="float-right btn btn-danger btn-lg mr-2"><Link className="text-white link-design" to="/">Back</Link></button>
-            <div className="create-form">
-        <div>
-            <h1>Account Create Panel</h1>
-            <form onSubmit={handleSubmit}>
-                <input
-                    className="input-field"
-                    type="Email"
-                    name="username"
-                    onBlur={handleBlur}
-                    placeholder="Email"
-                    required
-                />
-                <br />
-                <input
-                    className="input-field"
-                    type="password"
-                    name="password"
-                    onBlur={handleBlur}
-                    placeholder="Password"
-                    required
-                />
-                
-                <br/>
-                    
-                <br />
-                <br />
-                <input className="submit-btn" type="submit" value="signup" />
-                <p>{message}</p>
-
-            </form>
-        </div> */}
-    {/* </div>
-        </div> */}
         </>
     );
 };

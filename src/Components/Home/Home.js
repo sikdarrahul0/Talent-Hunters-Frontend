@@ -11,7 +11,7 @@ const Home = () => {
     const [isHitApi, setIsHitApi] = useState(false);
     const [category, setCategory] = useState();
     useEffect(()=>{
-        fetch(`http://localhost:7000/jobPost/approvedJobPost/${category}`)
+        fetch(`http://localhost:8000/job/approved/post/${category}`)
         .then(res => res.json())
         .then(data => {
             setIsHitApi(true);
@@ -26,6 +26,7 @@ const Home = () => {
             <div className="row">
             <div className="col-12 category-div">
                 <select className="float-right" id="category" onChange={(e)=>setCategory(e.target.value)} required>
+                <option value="undefined">All</option>
                 <option value="IT">IT</option>
                 <option value="BANKING">BANKING</option>
                 <option value="AGRO">AGRO</option>
@@ -33,7 +34,7 @@ const Home = () => {
                 <option value="ARCHITECTS">ARCHITECTS</option>
                 <option value="DATA ENTRY">DATA ENTRY</option>
                 <option value="GARMENTS">GARMENTS</option>
-                <option value="MEDICAL/PHARMA">MEDICAL/PHARMA</option>
+                <option value="MEDICAL">MEDICAL</option>
                 <option value="DESIGNER">DESIGNER</option>
                 <option value="OTHERS">OTHERS</option>
                 </select>
