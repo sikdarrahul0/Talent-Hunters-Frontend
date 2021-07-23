@@ -31,6 +31,14 @@
   cursor: pointer;
   margin-bottom: 5px;
 }
+.credit-tag {
+  margin: 5px auto;
+  color: #fff;
+}
+.credit-tag:hover {
+  text-decoration: none;
+  color: #fff;
+}
 
 @media only screen and (max-width: 460px) {
   .footer-section p {
@@ -40,6 +48,9 @@
     font-size: 18px;
   }
   .footer-section h6 {
+    font-size: 14px;
+  }
+  .credit-tag {
     font-size: 14px;
   }
 }
