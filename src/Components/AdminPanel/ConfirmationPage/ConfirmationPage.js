@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { toast, ToastContainer, Zoom } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import loading from '../../../image&gif/loading.gif';
 import SingleJobDetails from '../../SingleJobDetails/SingleJobDetails';
-import './ApprovedOrDeletePage.css';
+import './ConfirmationPage.css';
 
-const ApprovedOrDeletePage = () => {
+const ConfirmationPage = () => {
   const [isHitApi,setIsHitApi] = useState(false);
   const [job, setJob] = useState({});
   const {id} = useParams();
   useEffect(()=>{
-    fetch(`http://localhost:8000/job/single/${id}`)
+    fetch(`https://talenthuntersbd.herokuapp.com/job/single/${id}`)
     .then(res => res.json())
     .then(data => {
             setIsHitApi(true);
@@ -17,25 +19,31 @@ const ApprovedOrDeletePage = () => {
         })
   },[id])
 
-  const handleDeletePost = (id) => {
-        fetch(`http://localhost:8000/job/delete/${id}`,{
-          method: 'DELETE',
-          headers: {'Content-Type': 'application/json'}
-      })
-      .then(res => res.json())
-      .then(res => alert(res.message))
-  }
-
+  const notify = (message) => toast.dark( message,{
+    autoClose: 2300,
+    transition: Zoom
+  });
+// approved single job post by admin
   const handleStatusUpdate = (id) =>{
-        fetch(`http://localhost:8000/job/approve/${id}`,{
+        fetch(`https://talenthuntersbd.herokuapp.com/job/approve/${id}`,{
             method: 'PUT',
             headers: {'Content-Type': 'application/json'}
         })
         .then(res => res.json())
-        .then(res => alert(res.message))
+        .then(res => notify(res.message))
       }
+// delete single job post by admin
+      const handleDeletePost = (id) => {
+        fetch(`https://talenthuntersbd.herokuapp.com/job/delete/${id}`,{
+          method: 'DELETE',
+          headers: {'Content-Type': 'application/json'}
+      })
+      .then(res => res.json())
+      .then(res => notify(res.message))
+  }
     return (
         <section className="mb-5">
+          <ToastContainer />
         {
             isHitApi ?
             <SingleJobDetails job={job}></SingleJobDetails>
@@ -56,4 +64,4 @@ const ApprovedOrDeletePage = () => {
     );
 };
 
-export default ApprovedOrDeletePage;
+export default ConfirmationPage;

@@ -1,0 +1,32 @@
+.about-page {
+  padding: 140px 0 30px 0;
+  background-image: linear-gradient(to right, #39235b, #6734af, #39235b);
+}
+.single-user-box {
+  width: 350px;
+  margin: 10px auto;
+  transition: all 0.3s ease;
+}
+.single-user-box:hover {
+  margin-top: 20px;
+}
+.single-user-box img {
+  width: 310px;
+  height: 330px;
+}
+.single-user-box h3 {
+  color: white;
+}
+.single-user-box p {
+  color: white;
+}
+.user-box {
+  margin: 0 10px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: #835bc7;
+}
+.user-box:hover {
+  background-color: #442c68;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
+}

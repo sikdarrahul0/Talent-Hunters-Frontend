@@ -4,14 +4,14 @@ import React, { useEffect, useState } from 'react';
 import loading from '../../image&gif/loading.gif';
 import sadEmoji from '../../image&gif/sad-emoji.png';
 import './Home.css';
-import UnitPost from './UnitPost';
+import HomeSinglePost from './HomeSinglePost';
 
 const Home = () => {
     const [post, setPost] = useState([]);
     const [isHitApi, setIsHitApi] = useState(false);
     const [category, setCategory] = useState();
     useEffect(()=>{
-        fetch(`http://localhost:8000/job/approved/post/${category}`)
+        fetch(`https://talenthuntersbd.herokuapp.com/job/approved/post/${category}`)
         .then(res => res.json())
         .then(data => {
             setIsHitApi(true);
@@ -45,7 +45,7 @@ const Home = () => {
                 {
                     isHitApi ?
                     post.length ?
-                    post.map(pt => <UnitPost pt={pt}></UnitPost>)
+                    post.map(pt => <HomeSinglePost pt={pt}></HomeSinglePost>)
                     :
                     <div className="text-center w-75 mx-auto my-5">
                         <h4 className="inline-block text-secondary">Sorry</h4>

@@ -1,5 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { NavLink, useHistory, useLocation } from 'react-router-dom';
+import { toast, ToastContainer, Zoom } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { UserContext } from '../../App';
 import image from '../../image&gif/brand-img.png';
 import './Login.css';
@@ -10,21 +12,26 @@ const Login = () => {
     const history = useHistory();
     const location = useLocation();
     const { from } = location.state || { from: { pathname: '/' } };
-    const [error, setError] = useState('');
+    const [message, setMessage] = useState('');
     const [user, setUser] = useState({
         username: '',
         password: '',
     });
 
+    const notify = (message, time) => toast.dark( message,{
+        autoClose: time,
+        transition: Zoom
+      });
+
     const handleResponse = (res, redirect) => {
         setLoggedInUser(res);
         if (redirect) {
             if(res.accountType === 'admin'){
-                from.pathname = '/adminPanel'
+                from.pathname = '/adminpanel'
                 history.replace(from);
             }
             else if(res.accountType === 'employer'){
-                from.pathname = '/postUploader'
+                from.pathname = '/add/post'
                 history.replace(from);
             }
             else{
@@ -35,7 +42,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:8000/user/login`, {
+        fetch(`https://talenthuntersbd.herokuapp.com/user/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(user),
@@ -43,10 +50,11 @@ const Login = () => {
             .then((res) => res.json())
             .then((result) => {
                 if (result.error) {
-                    setError(result.error);
+                    notify(result.error, 3000);
                 } 
                 else{
-                    handleResponse(result, true);
+                    notify("Successfully login", 1500);
+                    setTimeout(()=> handleResponse(result, true), 1600);
                 }
             });
     };
@@ -56,9 +64,9 @@ const Login = () => {
         if (e.target.name === 'username') {
             isValid = /\S+@\S+\.\S+/.test(e.target.value);
             if (isValid) {
-                setError('');
+                setMessage('');
             } else {
-                setError('Please fill up email field correctly.');
+                setMessage('Please fill up email field correctly.');
             }
         }
         // eslint-disable-next-line no-constant-condition
@@ -70,6 +78,7 @@ const Login = () => {
     };
     return (
         <section>
+             <ToastContainer />
                 <NavLink to="/"> <img src={image} className="brand-img" alt="" /> </NavLink>
                 <div className="login-form">
                    <div className="login-panel">
@@ -78,10 +87,10 @@ const Login = () => {
                     <div className="m-3">
                         <form onSubmit={handleSubmit}>
                             <input type="Email" name="username" onBlur={handleBlur} placeholder="Username/Email" required/>
-                            <input type="password" name="password" onBlur={handleBlur} placeholder="Password" required/>
+                            <input type="password" name="password" onChange={handleBlur} placeholder="Password" required/>
                             <input className="login-btn" type="submit" value="LOG IN" />
                         </form>
-                        <p className="text-danger text-center">{error}</p>
+                        <p className="text-danger text-center">{message}</p>
                     </div>
                     <div className="mt-1 mb-3 text-center">
                         <p className="text-secondary m-1">Don’t have an account?</p>

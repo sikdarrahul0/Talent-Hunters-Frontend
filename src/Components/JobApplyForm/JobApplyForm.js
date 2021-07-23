@@ -11,7 +11,7 @@ const JobApplyForm = () => {
         <iframe className="d-none" id="hidden-iframe"> </iframe>
       <form
         method="post"
-        action="http://localhost:8000/apply/"
+        action="https://talenthuntersbd.herokuapp.com/apply/"
         enctype="multipart/form-data"
         target="hidden-iframe" 
       >

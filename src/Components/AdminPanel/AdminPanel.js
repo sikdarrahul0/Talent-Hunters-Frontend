@@ -1,14 +1,19 @@
 /* eslint-disable react/jsx-no-undef */
 import React, { useEffect, useState } from 'react';
+import loading from '../../image&gif/loading.gif';
 import './AdminPanel.css';
-import UnitJobPost from './UnitJobPost';
+import SingleJobPost from './SingleJobPost';
 
 const AdminPanel = () => {
+    const [isHitApi, setIsHitApi] = useState(false);
     const [post, setPost] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:8000/job/all')
+        fetch('https://talenthuntersbd.herokuapp.com/job/all')
         .then(res => res.json())
-        .then(data => setPost(data))
+        .then(res => {
+            setIsHitApi(true)
+            setPost(res)
+        })
     },[])
     
     return (
@@ -17,7 +22,10 @@ const AdminPanel = () => {
                 <h2 className="text-center mb-3">Admin Home Page</h2>
                 <div className="row">
                     {
-                        post.map(single => <UnitJobPost single={single}></UnitJobPost>)
+                        isHitApi?
+                        post.map(job => <SingleJobPost job={job}></SingleJobPost>)
+                        :
+                        <img className="d-block mx-auto loading-img" src={loading} alt="loading" />
                     }
                 </div>
             </div>

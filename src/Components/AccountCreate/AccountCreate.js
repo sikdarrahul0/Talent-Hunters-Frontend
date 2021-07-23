@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { toast, ToastContainer, Zoom } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import image from '../../image&gif/brand-img.png';
 import './AccountCreate.css';
 
@@ -10,18 +12,22 @@ const AccountCreate = () => {
         password: '',
         confirmPassword: ''
     });
+    const notify = (message) => toast.dark( message,{
+        autoClose: 4000,
+        transition: Zoom
+      });
     const handleSubmit = (e) => {
         e.preventDefault();
         if(user.password === user.confirmPassword){
             delete user.confirmPassword;
-            fetch(`http://localhost:8000/user/signup`, {
+            fetch(`https://talenthuntersbd.herokuapp.com/user/signup`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(user),
         })
             .then((res) => res.json())
             .then((result) => {
-                setMessage(result.message);
+                notify(result.message);
             });
         }else{
             setMessage('Password and Confirm Password are not matched');
@@ -72,6 +78,7 @@ const AccountCreate = () => {
     return (
         <>
         <section>
+        <ToastContainer />
                 <NavLink to="/"> <img src={image} className="brand-img" alt="" /> </NavLink>
                 <div className="signup-form">
                    <div className="signup-panel">

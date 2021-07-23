@@ -10,7 +10,7 @@ const CandidateList = () => {
     const [candidateList, setCandidateList] = useState([]);
 
     useEffect(()=>{
-        fetch(`http://localhost:8000/apply/candidate/${id}`)
+        fetch(`https://talenthuntersbd.herokuapp.com/apply/candidate/${id}`)
         .then(res => res.json())
         .then(res => {
             setIsHitApi(true);
@@ -18,7 +18,7 @@ const CandidateList = () => {
     },[id])
     
     return (
-        <div style={{marginTop: '130px'}} className="container">
+        <div style={{marginTop: '130px', marginBottom: '80px'}} className="container">
             <div className="row">
                 <h2 className="mx-auto mb-3">Candidate List</h2>
             {   

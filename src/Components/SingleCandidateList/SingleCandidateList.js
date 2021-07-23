@@ -42,7 +42,7 @@ const SingleCandidateList = (props) => {
                                   <p>Phone: <span>{mobileNo}</span></p>
                                   <p>Address: <span>{address}</span></p>
                                   <p>Get To Know The Company: <span>{source}</span></p>
-                                  <p><a href={`http://localhost:8000/${resume}`} target="_blank" rel='noreferrer noopener'><FontAwesomeIcon className="pdf-icon" icon={faFilePdf} /></a></p>
+                                  <p><a href={`https://talenthuntersbd.herokuapp.com/${resume}`} target="_blank" rel='noreferrer noopener'><FontAwesomeIcon className="pdf-icon" icon={faFilePdf} /></a></p>
                                </div>
                             </Typography>
                         </AccordionDetails>

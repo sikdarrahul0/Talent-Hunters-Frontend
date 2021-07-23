@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { UserContext } from '../../App';
-import logo from '../../image&gif/default-monochrome.svg';
+import logo from '../../image&gif/brand-logo.svg';
 import './NavBar.css';
 
 const NavBar = () => {
@@ -15,8 +15,9 @@ const NavBar = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
                     <NavLink exact to="/home" className="nav-link">Home</NavLink>
-                    <NavLink exact to="/adminPanel" className="nav-link"> Admin Panel</NavLink>
-                    <NavLink exact to="/postUploader" className="nav-link"> Employer</NavLink>
+                    <NavLink exact to="/adminpanel" className="nav-link"> Admin Panel</NavLink>
+                    <NavLink exact to="/add/post" className="nav-link"> Employer</NavLink>
+                    <NavLink exact to="/about" className="nav-link"> About Us</NavLink>
                     <NavLink exact to="/signup" className="nav-link"> Sign up</NavLink>
                     {
                     loggedInUser.username ?

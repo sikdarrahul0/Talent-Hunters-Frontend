@@ -11,7 +11,7 @@ const EmployerJobPost = (props) => {
                 <h4>{title}</h4>
                 <h6>{companyName}</h6>
                 <p>Category: {category}</p>
-                <NavLink style={{ textDecoration: 'none' }}  to={`/candidateList/${_id}`} className="btn btn-success">See who applied</NavLink>
+                <NavLink style={{ textDecoration: 'none' }}  to={`/candidatelist/${_id}`} className="btn btn-success">See who applied</NavLink>
             </div>
 
         </div>

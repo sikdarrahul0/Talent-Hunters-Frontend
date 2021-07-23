@@ -11,7 +11,7 @@ const ApplyPage = () => {
   const [job, setJob] = useState({});
   const {id} = useParams();
   useEffect(()=>{
-    fetch(`http://localhost:8000/job/single/${id}`)
+    fetch(`https://talenthuntersbd.herokuapp.com/job/single/${id}`)
     .then(res => res.json())
     .then(data => {
             setIsHitApi(true);
@@ -27,7 +27,7 @@ const ApplyPage = () => {
         <img className="d-block mx-auto loading-img" src={loading} alt="loading" />
        
       }
-      <NavLink style={{ textDecoration: 'none' }} to={`/jobApplyForm/${job._id}`}> <button  className="apply-btn">Apply Now</button></NavLink>  
+      <NavLink style={{ textDecoration: 'none' }} to={`/job/applyform/${job._id}`}> <button  className="apply-btn mb-4">Apply Now</button></NavLink>  
       </>
     );
 };

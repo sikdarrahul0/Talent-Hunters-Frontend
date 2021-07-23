@@ -3,7 +3,7 @@ import { faCopyright } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../../image&gif/default-monochrome.svg';
+import logo from '../../image&gif/brand-logo.svg';
 import './Footer.css';
 
 const Footer = () => {
@@ -11,7 +11,7 @@ const Footer = () => {
         <section className="footer-section">
             <div className="container">
                 <div className="row justify-content-center mb-3">
-                    <div className="col-sm-4 col-auto mb-4">
+                    <div className="col-sm-4 col-auto mb-5">
                         <h5>For Job Seekers</h5>
                         <NavLink className="footer-link" to=""><p>&#8226; Browse Jobs</p></NavLink>
                         <NavLink className="footer-link" to="/"><p>&#8226; Category Selection</p></NavLink>
@@ -19,7 +19,7 @@ const Footer = () => {
                         <NavLink className="footer-link" to="/"><p>&#8226; Apply Panel</p></NavLink>
                         <NavLink className="footer-link" to="/"><p>&#8226; Help</p></NavLink>
                     </div>
-                    <div className="col-sm-4 col-auto mb-4">
+                    <div className="col-sm-4 col-auto mb-5">
                         <h5>For employer</h5>
                         <NavLink className="footer-link" to="/"><p>&#8226; Upload Jobs</p></NavLink>
                         <NavLink className="footer-link" to="/"><p>&#8226; Resources</p></NavLink>
@@ -27,7 +27,7 @@ const Footer = () => {
                         <NavLink className="footer-link" to="/"><p>&#8226; Candidate List</p></NavLink>
                         <NavLink className="footer-link" to="/"><p>&#8226; Help</p></NavLink>
                     </div>
-                    <div className="col-sm-4 col-auto mb-4">
+                    <div className="col-sm-4 col-auto mb-3">
                         <h5>Helpful Resources</h5>
                         <NavLink className="footer-link" to="/about"><p> &#8226; About Talent Hunters</p></NavLink>
                         <NavLink className="footer-link" to="/"><p> &#8226; Work For Talent Hunters</p></NavLink>

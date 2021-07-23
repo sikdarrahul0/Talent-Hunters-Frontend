@@ -4,9 +4,10 @@ import {
   BrowserRouter as Router, Route, Switch
 } from "react-router-dom";
 import './App.css';
+import About from './Components/About/About';
 import AccountCreate from './Components/AccountCreate/AccountCreate';
 import AdminPanel from './Components/AdminPanel/AdminPanel';
-import ApprovedOrDeletePage from './Components/AdminPanel/ApprovedOrDeletePage/ApprovedOrDeletePage';
+import ConfirmationPage from './Components/AdminPanel/ConfirmationPage/ConfirmationPage';
 import AdminProtected from './Components/AdminProtected/AdminProtected';
 import ApplyPage from './Components/ApplyPage/ApplyPage';
 import CandidateList from './Components/CandidateList/CandidateList';
@@ -16,6 +17,7 @@ import Home from './Components/Home/Home';
 import JobApplyForm from './Components/JobApplyForm/JobApplyForm';
 import Login from './Components/Login/Login';
 import NavBar from './Components/Navbar/NavBar';
+import NotFound from './Components/NotFound/NotFound';
 import PostUploader from './Components/PostUploader/PostUploader';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
@@ -31,13 +33,13 @@ function App() {
           <Route exact path ="/">
             <Home />
           </Route>
-          <Route path ="/applyPage/:id">
+          <Route path ="/applypage/:id">
             <ApplyPage />
           </Route>
-          <PrivateRoute path="/jobApplyForm/:id">
+          <PrivateRoute path="/job/applyform/:id">
             <JobApplyForm />
           </PrivateRoute>
-          <EmployerProtected path="/candidateList/:id">
+          <EmployerProtected path="/candidatelist/:id">
             <CandidateList />
           </EmployerProtected>
           <Route path="/signup">
@@ -46,17 +48,23 @@ function App() {
           <Route path="/login">
             <Login/>
           </Route>
-          <EmployerProtected path="/postUploader">
+          <Route path="/about">
+            <About />
+          </Route>
+          <EmployerProtected path="/add/post">
              <PostUploader/>
           </EmployerProtected>
-          <AdminProtected path="/adminPanel">
+          <AdminProtected path="/adminpanel">
              <AdminPanel />
           </AdminProtected>
-          <AdminProtected path="/approvedOrDeletePage/:id">
-            <ApprovedOrDeletePage />
+          <AdminProtected path="/confirmationpage/:id">
+            <ConfirmationPage />
           </AdminProtected>
           <Route path="/home">
              <Home/>
+          </Route>
+          <Route path="*">
+            <NotFound />
           </Route>
         </Switch>
         <Footer />
