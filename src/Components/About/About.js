@@ -44,7 +44,7 @@ const About = () => {
                                     <div className="user-box">
                                         <h3>I am an employer</h3>
                                         <p>You don’t want just any candidate, you want the right fit.</p>
-                                        <NavLink to="/postUploader"><button class="btn btn-outline-light"><FontAwesomeIcon icon={faSearch} /></button></NavLink>
+                                        <NavLink to="/add/post"><button class="btn btn-outline-light"><FontAwesomeIcon icon={faSearch} /></button></NavLink>
                                     </div>
                                 </div>
                             </div>

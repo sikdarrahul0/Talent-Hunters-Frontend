@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { UserContext } from '../../App';
+import { UserContext } from '../../../App';
 
-const PrivateRoute = ({ children, ...rest }) => {
+const CandidateProtected = ({ children, ...rest }) => {
     // eslint-disable-next-line no-unused-vars
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     return (
@@ -24,4 +24,4 @@ const PrivateRoute = ({ children, ...rest }) => {
     );
 };
 
-export default PrivateRoute;
+export default CandidateProtected;
