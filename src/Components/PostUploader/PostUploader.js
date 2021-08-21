@@ -150,7 +150,7 @@ const PostUploader = () => {
                 <option value="ARCHITECTS">ARCHITECTS</option>
                 <option value="DATA ENTRY">DATA ENTRY</option>
                 <option value="GARMENTS">GARMENTS</option>
-                <option value="MEDICAL/PHARMA">MEDICAL/PHARMA</option>
+                <option value="MEDICAL">MEDICAL/PHARMA</option>
                 <option value="DESIGNER">DESIGNER</option>
            </select>
             </div>
